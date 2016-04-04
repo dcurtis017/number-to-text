@@ -5,9 +5,6 @@
   <groupId>com.dcurtis017.netsertive</groupId>
   <artifactId>ConvertNumber</artifactId>
   <version>0.0.1</version>
-    <configuration>
-       <finalName>ConvertNumber</finalName>                   
-   </configuration>
   <packaging>jar</packaging>
 
   <name>number-to-text</name>

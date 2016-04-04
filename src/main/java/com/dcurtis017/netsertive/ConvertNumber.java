@@ -36,6 +36,7 @@ public class ConvertNumber {
 	protected String convertPartToWord(String number)
 	{
 		String paddedNumber = org.apache.commons.lang3.StringUtils.leftPad(number, 3, "0");
+
 		if(paddedNumber.equals("000"))
 		{
 			return "zero";
@@ -124,8 +125,6 @@ public class ConvertNumber {
 		{
 			paddedNumber = org.apache.commons.lang3.StringUtils.leftPad(number, 6, "0");
 		}
-		//pad the number first
-		
 		//since I'm removing the 
 		Matcher m = this.validateNumber(paddedNumber);
 		//at most there will be two matched groups started at index 1
@@ -136,9 +135,9 @@ public class ConvertNumber {
 				String convertedNumber = convertPartToWord(m.group(i));				
 				if (convertedNumber.equals("zero"))
 				{
-					if(i == 1)
+					if(i == 1 || start == 2)
 					{
-						sb.append(convertedNumber);
+						return "zero";
 					}
 					break;
 				}

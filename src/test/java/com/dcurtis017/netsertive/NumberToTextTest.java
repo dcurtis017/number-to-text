@@ -60,12 +60,14 @@ public class NumberToTextTest {
 		return new Object[][]
 				{
 					{"0,000", "zero"},
-					{"0", "zero"}
+					{"0", "zero"},
+					{"-0", "zero"}
 				};
 	}	
 	
 	@Test(dataProvider = "zero-cases")
 	public void testZeroCases(String param, String expected){
+		Assert.assertTrue(ntt.convertToWord(param).equals(expected));
 	}
 	
 	@DataProvider(name = "partial-conversions")
